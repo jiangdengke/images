@@ -24,7 +24,7 @@ jobs:
 
       - name: 直接生成 README.md
         run: |
-          python scripts/gen_readme_md.py
+          python scripts/gen_images_md.py
 
       - name: 提交并推送更改
         uses: stefanzweifel/git-auto-commit-action@v5
