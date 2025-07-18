@@ -3,7 +3,7 @@ import os
 IMAGE_DIR = "images"
 OUTPUT_FILE = "images.md"
 
-md_lines = ["## 图片预览\n"]
+# md_lines = ["## 图片预览\n"]
 
 for file in sorted(os.listdir(IMAGE_DIR)):
     if file.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.webp', '.bmp')):
