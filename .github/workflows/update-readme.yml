@@ -22,15 +22,9 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: 生成图片Markdown
+      - name: 直接生成 README.md
         run: |
-          python scripts/gen_images_md.py
-
-      - name: 更新README.md
-        run: |
-          head -n 20 README.md > README_tmp.md
-          cat images.md >> README_tmp.md
-          mv README_tmp.md README.md
+          python scripts/gen_readme_md.py
 
       - name: 提交并推送更改
         uses: stefanzweifel/git-auto-commit-action@v5
