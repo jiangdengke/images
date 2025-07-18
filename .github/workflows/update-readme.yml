@@ -1,0 +1,36 @@
+name: 自动生成图片预览到README
+
+on:
+  push:
+    paths:
+      - 'images/**'
+      - '.github/workflows/update-readme.yml'
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 设置Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: 生成图片Markdown
+        run: |
+          python scripts/gen_images_md.py
+
+      - name: 更新README.md
+        run: |
+          head -n 20 README.md > README_tmp.md
+          cat images.md >> README_tmp.md
+          mv README_tmp.md README.md
+
+      - name: 提交并推送更改
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "自动更新图片预览"
+          branch: ${{ github.ref }}
