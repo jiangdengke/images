@@ -1,5 +1,8 @@
 name: 自动生成图片预览到README
 
+permissions:
+  contents: write
+
 on:
   push:
     paths:
