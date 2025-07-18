@@ -1,0 +1,13 @@
+# 忽略自动生成的图片 Markdown 文件
+images.md
+
+# Python 缓存文件
+__pycache__/
+*.pyc
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# VSCode 配置
+.vscode/
