@@ -1,14 +1,18 @@
 import os
 
 IMAGE_DIR = "images"
-OUTPUT_FILE = "images.md"
+README_FILE = "README.md"
 
-md_lines = ["## 图片预览\n"]
+intro_lines = [
+    "## 图片预览\n"
+]
+
+image_lines = []
 
 for file in sorted(os.listdir(IMAGE_DIR)):
     if file.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.webp', '.bmp')):
-        md_lines.append(f"**{file}**")
-        md_lines.append(f"![{file}]({IMAGE_DIR}/{file})")
+        image_lines.append(f"**{file}**")
+        image_lines.append(f"![{file}]({IMAGE_DIR}/{file})\n")
 
-with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-    f.write("\n".join(md_lines))
+with open(README_FILE, "w", encoding="utf-8") as f:
+    f.write("\n".join(intro_lines + image_lines))
