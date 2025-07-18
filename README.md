@@ -1,8 +1,5 @@
 ## 图片预览
 
-**00212-140916445-nature,mountain,starry sky ,lake,field,.png**
-![00212-140916445-nature,mountain,starry sky ,lake,field,.png](images/00212-140916445-nature,mountain,starry sky ,lake,field,.png)
-
 **1.png**
 ![1.png](images/1.png)
 
@@ -89,3 +86,6 @@
 
 **头像.png**
 ![头像.png](images/头像.png)
+
+**山水.png**
+![山水.png](images/山水.png)
